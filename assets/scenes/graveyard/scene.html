@@ -1,0 +1,25 @@
+<div class="sky-background">
+  {{#each cloud}}
+    <div class="cloud {{this}}"></div>
+  {{/each}}
+</div>
+
+<div class="sky-container">
+   
+  <div class="bomb hidden"></div>
+  <div id="plane"></div>
+  {{#each sky}}
+    <div class="sky" id="{{id}}" class="tile" style="{{style}}"></div>
+  {{/each}}
+</div>
+
+<div id="tile-container">
+{{#each tile}}
+<div id="{{id}}" class="tile" style="{{style}}"></div>
+{{/each}}
+</div>
+
+<div id="character" style="top: 128px;"></div>
+
+<div class="inventory"></div>
+

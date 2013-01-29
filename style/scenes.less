@@ -1,0 +1,465 @@
+#viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .user-select(none);
+}
+
+.scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  //padding: 8px;
+  //width: 80%;
+  //height: 80%;
+  //left: 10%;
+  //top: 10%;
+  
+  //.border-radius(8px);
+  //.box-shadow(0px, 0px, 6px, #222);
+  
+  //border: 1px solid #ccc;
+  
+  background-color: #fff;
+}
+
+.sky {
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 128px;
+}
+
+.tile {
+  position: absolute;
+  
+  width: 128px;
+  height: 128px;
+}
+
+.inventory {
+  height: 128px;
+  width: 1024px;
+  
+  background-image: url("../@{pathImages}/inventory.png");
+  background-repeat: no-repeat;
+  
+  .item {
+    &:nth-child(2) {
+      left: 0px; 
+    }
+    
+    &:nth-child(3) {
+      left: 128px; 
+    }
+    
+    &:nth-child(4) {
+      left: 256px; 
+    }
+    
+    &:nth-child(5) {
+      left: 384px; 
+    }
+    
+    &:nth-child(6) {
+      left: 512px;
+    }
+    
+    &:nth-child(7) {
+      left: 640px;
+    }
+    
+    &:nth-child(8) {
+      left: 768px;
+    }
+    
+    &.buttons {
+      left: 896px;
+    }
+  }
+}
+
+#character {
+  background-image: url("../@{pathImages}/character.png");
+  background-repeat: no-repeat;
+  
+  position: absolute;
+  
+  width: 128px;
+  height: 128px;
+}
+
+#graveyard {
+  width: 1024px;
+  height: 768px;
+}
+
+#body-container {
+
+  width: 1024px;
+  height: 512px;
+}
+
+.sky-container {
+  background-image: url("../@{pathImages}/gate.png");
+  background-repeat: no-repeat;
+  
+  position: absolute;
+  top: 0px;
+  
+  width: 1024px;
+  height: 128px;
+}
+
+.sky-background {
+  background-image: url("../@{pathImages}/sky.png");
+  background-repeat: no-repeat;
+  
+  width: 1024px;
+  height: 128px;
+  
+  overflow: hidden;
+  
+  .cloud {
+    background-image:url("../@{pathImages}/cloud.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 12px;
+    
+    &.image1 {width:64px; height:64px; .background-position(-0px, -128px); }
+    &.image2 {width:128px; height:64px; .background-position(-0px, -64px); }
+    &.image3 {width:128px; height:64px; .background-position(-0px, -0px); }
+    
+  }
+}
+
+#tile-container {
+  background-image: url("../@{pathImages}/grass.png");
+  
+  width: 1024px;
+  height: 512px;
+  
+  .item {    
+    position: absolute;
+  }
+}
+
+.inventory, #tile-container {
+  .item {
+    position: absolute;
+    
+    background-repeat: no-repeat;
+    
+    width: 128px;
+    height: 128px;
+    
+    &.arm1 {
+      background-image: url("../@{pathImages}/arms1.png");
+    }
+    
+    &.arm2 {
+      background-image: url("../@{pathImages}/arms2.png");
+    }
+    
+    &.legs1 {
+      background-image: url("../@{pathImages}/legs1.png");
+    }
+    
+    &.legs2 {
+      background-image: url("../@{pathImages}/legs2.png");
+    }
+    
+    &.top1 {
+      background-image: url("../@{pathImages}/top1.png");
+    }
+    
+    &.top2 {
+      background-image: url("../@{pathImages}/top2.png");
+    }
+    
+    &.heart {
+      background-image: url("../@{pathImages}/heart.png");
+      
+      &.frame1 { .background-position(-128px, -384px); }
+      &.frame2 { .background-position(-128px, -256px); }
+      &.frame3 { .background-position(-0px, -384px); }
+      &.frame4 { .background-position(-0px, -256px); }
+      &.frame5 { .background-position(-128px, -128px); }
+      &.frame6 { .background-position(-0px, -128px); }
+      &.frame7 { .background-position(-128px, -0px); }
+      &.frame8 { .background-position(-0px, -0px); }
+    }
+    
+    &.head1 {
+      background-image: url("../@{pathImages}/head1_small.png");
+    }
+    
+    &.head2 {
+      background-image: url("../@{pathImages}/head2_small.png");
+    }
+    
+    &.assemble {
+      background-image: url("../@{pathImages}/arrow.png");
+    }
+  }
+}
+
+#plane {
+  background-image: url("../@{pathImages}/plane.png");
+  background-repeat: no-repeat;
+  
+  position: absolute;
+  
+  width: 128px;
+  height: 128px;
+}
+
+.bomb {
+  background-image: url("../@{pathImages}/bomb.png");
+  background-repeat: no-repeat;
+  
+  position: absolute;
+  
+  width: 64px;
+  height: 64px;
+}
+
+.explosion {
+  background-image: url("../@{pathImages}/explosion.png");
+  
+  width: 128px;
+  height: 128px;
+  
+  position: absolute;
+  
+  
+}
+
+.grave {
+  
+  &.stone1 {
+    background-image: url("../@{pathImages}/grave1.png");
+  }
+  &.stone2 {
+    background-image: url("../@{pathImages}/grave2.png");
+  }
+  &.stone3 {
+    background-image: url("../@{pathImages}/grave3.png");
+  }
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 128px;
+  height: 128px;
+}
+
+.crater {
+  background-image: url("../@{pathImages}/crater.png");
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+}
+
+.message {
+  width: 300px;
+  height: 150px;
+  .border-radius(8px);
+  .linearVertGradient(#eee, #ccc);
+  position: absolute;
+  left: 32px;
+  bottom: 128px + 32px;
+  padding: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  .box-shadow(0px, 0px, 8px, #000);
+  .opacity(0.8);
+}
+
+
+#surgery-sky-container {
+  width: 1024px;
+  height: 128px;
+  
+  .linearVertGradient(#eee, #ccc);
+}
+
+#surgery-tile-container {
+  width: 1024px;
+  height: 512px;
+  
+  background-image: url("../@{pathImages}/floor.png");
+  background-repeat: no-repeat;
+}
+
+#character-large {
+  position: absolute;
+  left: 8px;
+  top: 210px;
+  
+  width: 256px;
+  height: 368px;
+  
+  background-image: url("../@{pathImages}/character_large.png");
+  background-repeat: no-repeat;
+}
+
+#startscreen {
+
+  &.intro {
+    background-image: url("../@{pathImages}/intro.png");
+    background-repeat: no-repeat;
+  }
+  &.intro1 {
+    background-image: url("../@{pathImages}/intro1.png");
+    background-repeat: no-repeat;
+  }
+
+  width: 1024px;
+  height: 768px;
+}
+#endscreen {
+  .outro {
+    position: absolute;
+    left: 385px;
+    top: 295px;
+    
+    width: 256px;
+    height: 368px;
+    
+    background-image: url("../@{pathImages}/character_large.png");
+    background-repeat: no-repeat;
+  }
+  
+  width: 1024px;
+  height: 768px;
+  
+  background-image: url("../@{pathImages}/intro.png");
+  background-repeat: no-repeat;
+}
+#gameover {
+  .retry {
+    position: absolute;
+    left: 370px;
+    top: 342px;
+    
+    width: 300px;
+    height: 368px;
+    
+    background-image: url("../@{pathImages}/replay.png");
+    background-repeat: no-repeat;
+  }
+  
+  width: 1024px;
+  height: 768px;
+  
+  background-image: url("../@{pathImages}/intro.png");
+  background-repeat: no-repeat;
+}
+#creditsbackground {
+  
+  width: 1024px;
+  height: 768px;
+  
+  background-image: url("../@{pathImages}/grass.png");
+  background-repeat: no-repeat;
+}
+
+#credit {
+  
+  width: 1024px;
+  height: 768px;
+  
+  position: absolute;
+  left: 300px;
+  top: 10px;
+  
+  background-image: url("../@{pathImages}/credit.png");
+  background-repeat: no-repeat;
+}
+
+
+#body-container {
+  width: 552px;
+  height: 342px;
+  
+  position: absolute;
+  left: 300px;
+  top: 220px;
+  
+  background-image: url("../@{pathImages}/table.png");
+  background-repeat: no-repeat;
+}
+.next {
+  width: 128px; 
+  height: 64px; 
+  
+  background-image: url("../@{pathImages}/next.png");
+  background-repeat: no-repeat;
+}
+.exit {
+  width: 128px; 
+  height: 64px; 
+  
+  background-image: url("../@{pathImages}/exit.png");
+  background-repeat: no-repeat;
+}
+
+.start {
+  position: absolute;
+  left: 370px;
+  top: 332px;
+  
+  width: 300px;
+  height: 368px;
+  
+  background-image: url("../@{pathImages}/start.png");
+  background-repeat: no-repeat;
+}
+  
+ .gameoverlabel {
+    height: 145px;
+    width: 670px;
+    
+    position: absolute;
+    
+    left: 180px;
+    top: 190px;
+    
+    background-image: url("../@{pathImages}/game_over.png");
+    background-repeat: no-repeat;
+  }
+
+#intro, #gameover {
+  .next {
+    position: absolute;
+    left: 888px; 
+    top: 648px;
+  }
+  
+  .exit {
+    position: absolute;
+    left: 888px; 
+    top: 700px;
+  }
+}
+
+.buttons .item {
+  
+}
+
+.sound {
+  &.on {
+    background-image: url("../@{pathImages}/sound_on.png");
+    background-repeat: no-repeat;
+  }
+  &.off {
+    background-image: url("../@{pathImages}/sound_off.png");
+    background-repeat: no-repeat;
+  }
+
+    position: absolute;
+    width: 128px; 
+    height: 128px; 
+    left: 892px; 
+    top: 504px;
+}
